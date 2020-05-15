@@ -1,0 +1,22 @@
+---
+name: pre-commit-check
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install prerequisites
+      run: |
+        brew install tfenv tflint terraform-docs pre-commit
+        pre-commit install
+        tfenv install
+    - name: pre-commit run all
+      run: |
+        pre-commit run -a
