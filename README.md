@@ -30,12 +30,14 @@ No provider.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| tags\_module | Tags Module in it's entirety |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## The Giants underneath this module
 - pre-commit.com/
-- www.terraform.io/
+- terraform.io/
 - github.com/tfutils/tfenv
 - github.com/segmentio/terraform-docs
