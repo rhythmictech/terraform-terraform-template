@@ -10,6 +10,7 @@ module "example" {
 ```
 
 ## About
+A bit about this module
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -24,7 +25,6 @@ No provider.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| env | Environment to tag resources with | `string` | `"default"` | no |
 | name | Moniker to apply to all resources in the module | `string` | n/a | yes |
 | tags | User-Defined tags | `map(string)` | `{}` | no |
 
