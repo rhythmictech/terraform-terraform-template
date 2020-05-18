@@ -10,6 +10,7 @@ module "example" {
 ```
 
 ## About
+A bit about this module
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -24,18 +25,19 @@ No provider.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| env | Environment to tag resources with | `string` | `"default"` | no |
 | name | Moniker to apply to all resources in the module | `string` | n/a | yes |
 | tags | User-Defined tags | `map(string)` | `{}` | no |
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| tags\_module | Tags Module in it's entirety |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## The Giants underneath this module
 - pre-commit.com/
-- www.terraform.io/
+- terraform.io/
 - github.com/tfutils/tfenv
 - github.com/segmentio/terraform-docs

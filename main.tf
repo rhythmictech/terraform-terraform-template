@@ -4,9 +4,6 @@ module "tags" {
   version = "1.0.0"
 
   enforce_case = "UPPER"
+  names        = [var.name]
   tags         = var.tags
-  names = [
-    var.env,
-    var.name
-  ]
 }
