@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Install prerequisites
         run: ./bin/install-macos.sh
-      - name: initiallize Terraform
+      - name: initialize Terraform
         run: terraform init --backend=false
       - uses: actions/cache@v1
         with:
