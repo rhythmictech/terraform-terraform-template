@@ -1,6 +1,6 @@
 config {
   module     = true
-  deep_check = true
+  deep_check = false
 }
 
 rule "terraform_deprecated_interpolation" {
