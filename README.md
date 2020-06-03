@@ -3,7 +3,7 @@ Template repository for terraform modules. Good for any cloud and any provider.
 
 ## Example
 Here's what using the module will look like
-```
+```hcl
 module "example" {
   source = "rhythmictech/terraform-mycloud-mymodule
 }
@@ -23,15 +23,15 @@ No provider.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| Name | Description                                     | Type          | Default | Required |
+|------|-------------------------------------------------|---------------|---------|:--------:|
+| name | Moniker to apply to all resources in the module | `string`      | n/a     |   yes    |
+| tags | User-Defined tags                               | `map(string)` | `{}`    |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name         | Description                  |
+|--------------|------------------------------|
 | tags\_module | Tags Module in it's entirety |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

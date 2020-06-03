@@ -6,8 +6,7 @@ Look to [main.tf](./main.tf), or be helpful and copy/paste that code here.
 
 ## Applying
 ```
->  alias tf="terraform"
->  tf apply
+>  terraform apply
 
 Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
