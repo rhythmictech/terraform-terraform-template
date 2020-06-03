@@ -1,5 +1,5 @@
 
 output "tags_module" {
-  description = "Tags Module in it's entirety"
+  description = "Tags Module in its entirety"
   value       = module.tags
 }
