@@ -12,11 +12,20 @@ jobs:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/cache@v1
+        with:
+          path: /usr/local/Homebrew/Library
+          key: homebrew-library|${{ hashFiles('usr/local/Homebrew/Library') }}
+          restore-keys: |
+            homebrew-library
+      - uses: actions/cache@v1
+        with:
+          path: /usr/local/Cellar
+          key: homebrew-cellar|${{ hashFiles('usr/local/Homebrew/Library') }}
+          restore-keys: |
+            homebrew-cellar
       - name: Install prerequisites
-        run: |
-          ./bin/install-macos.sh
-          tfenv install min-required
-          tfenv use min-required
+        run: ./bin/install-macos.sh
       - name: initiallize Terraform
         run: terraform init --backend=false
       - uses: actions/cache@v1

@@ -12,4 +12,5 @@ git config --global init.templateDir ~/.git-template
 pre-commit init-templatedir ~/.git-template
 
 echo 'installing terraform with tfenv'
-tfenv install
+tfenv install min-required
+tfenv use min-required
