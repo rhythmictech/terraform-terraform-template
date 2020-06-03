@@ -16,6 +16,8 @@ jobs:
         run: ./bin/install-macos.sh
       - name: initiallize Terraform
         run: terraform init --backend=false
+      - name: debug
+        run: tflint -v
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pre-commit
