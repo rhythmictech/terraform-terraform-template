@@ -20,7 +20,7 @@ jobs:
           tfenv install min-required
           tfenv use min-required
       - name: initiallize Terraform
-        run: terraform init
+        run: terraform init --backend=false
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pre-commit
