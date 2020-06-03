@@ -11,13 +11,13 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Install prerequisites
         run: ./bin/install-macos.sh
       - name: initiallize Terraform
         run: terraform init --backend=false
-      - name: debug
-        run: tflint -v
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pre-commit
@@ -30,3 +30,11 @@ jobs:
         env:
           AWS_DEFAULT_REGION: us-east-1
           SKIP: terraform_tflint_deep
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply automatic changes
+          commit_options: "--no-verify"
+          # Optional commit user and author settings
+          commit_user_name: Linter Bot
+          commit_user_email: noreply@rhythmictech.com
+          commit_author: Linter Bot <actions@github.com>
