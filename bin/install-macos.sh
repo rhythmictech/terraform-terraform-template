@@ -3,6 +3,7 @@
 echo 'installing brew packages'
 brew tap liamg/tfsec
 brew install tfenv tflint terraform-docs pre-commit liamg/tfsec/tfsec coreutils
+brew upgrade tfenv tflint terraform-docs pre-commit liamg/tfsec/tfsec coreutils
 
 echo 'installing pre-commit hooks'
 pre-commit install
