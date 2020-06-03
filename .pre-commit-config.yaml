@@ -40,3 +40,4 @@ repos:
       - id: trailing-whitespace
         args:
           - --markdown-linebreak-ext=md
+        exclude: README.md
