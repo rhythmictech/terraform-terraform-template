@@ -4,19 +4,29 @@ on:
   push:
     branches:
       - master
+      - develop
   pull_request:
 
 jobs:
   build:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
-
-    - name: Install prerequisites
-      run: |
-        brew install tfenv tflint terraform-docs pre-commit
-        pre-commit install
-        tfenv install
-    - name: pre-commit run all
-      run: |
-        pre-commit run -a
+      - uses: actions/checkout@v1
+      - name: Install prerequisites
+        run: ./bin/install-macos.sh
+      - name: initiallize Terraform
+        run: terraform init --backend=false
+      - name: debug
+        run: tflint -v
+      - uses: actions/cache@v1
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            pre-commit
+      - name: pre-commit run all
+        run: |
+          pre-commit run -a
+        env:
+          AWS_DEFAULT_REGION: us-east-1
+          SKIP: terraform_tflint_deep

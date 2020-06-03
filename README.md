@@ -3,7 +3,7 @@ Template repository for terraform modules. Good for any cloud and any provider.
 
 ## Example
 Here's what using the module will look like
-```
+```hcl
 module "example" {
   source = "rhythmictech/terraform-mycloud-mymodule
 }
@@ -15,7 +15,9 @@ A bit about this module
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.0 |
 
 ## Providers
 
