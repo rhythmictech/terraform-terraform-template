@@ -12,8 +12,6 @@ module "example" {
 ## About
 A bit about this module
 
-Note that if your module uses the AWS provider, `terraform validate` may fail, throwing an error about the `region` var being required. You can resolve this simply by setting `AWS_DEFAULT_REGION` in your shell.
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
