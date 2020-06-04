@@ -12,11 +12,13 @@ module "example" {
 ## About
 A bit about this module
 
+Note that if your module uses the AWS provider, `terraform validate` may fail, throwing an error about the `region` var being required. You can resolve this simply by setting `AWS_DEFAULT_REGION` in your shell.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
+| Name      | Version   |
+|-----------|-----------|
 | terraform | >= 0.12.0 |
 
 ## Providers
@@ -25,15 +27,15 @@ No provider.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| Name | Description                                     | Type          | Default | Required |
+|------|-------------------------------------------------|---------------|---------|:--------:|
+| name | Moniker to apply to all resources in the module | `string`      | n/a     |   yes    |
+| tags | User-Defined tags                               | `map(string)` | `{}`    |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name         | Description                  |
+|--------------|------------------------------|
 | tags\_module | Tags Module in it's entirety |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
