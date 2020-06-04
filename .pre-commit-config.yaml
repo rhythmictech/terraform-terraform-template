@@ -35,7 +35,6 @@ repos:
               terraform validate .
             done
           '
-        # entry: bash -c 'echo "$@"'
         language: system
         verbose: true
         files: \.tf(vars)?$
