@@ -18,6 +18,7 @@ A bit about this module
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12.0 |
+| aws | ~> 2.61.0 |
 
 ## Providers
 
