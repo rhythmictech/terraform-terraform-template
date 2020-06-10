@@ -29,7 +29,7 @@ jobs:
           pre-commit run -a
         env:
           AWS_DEFAULT_REGION: us-east-1
-          SKIP: terraform_tflint_deep
+          SKIP: terraform_tflint_deep,no-commit-to-branch
       - uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ failure() }}
         with:
