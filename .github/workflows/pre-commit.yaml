@@ -2,34 +2,32 @@
 name: pre-commit-check
 on:
   push:
-    branches:
+    branches: -- main
       - master
+      - prod
       - develop
-  pull_request:
 
 jobs:
-  build:
-    runs-on: macOS-latest
+  pre-commit-check:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+      - name: Set up Python
+        uses: actions/setup-python@v2
       - name: Install prerequisites
-        run: ./bin/install-macos.sh
+        run: ./bin/install-ubuntu.sh
       - name: initialize Terraform
         run: terraform init --backend=false
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pre-commit
-          key: pre-commit|${{ hashFiles('.pre-commit-config.yaml') }}
-          restore-keys: |
-            pre-commit
-      - name: pre-commit run all
-        run: |
-          pre-commit run -a
+      - name: pre-commit
+        uses: pre-commit/action@v2.0.0
         env:
           AWS_DEFAULT_REGION: us-east-1
-          SKIP: terraform_tflint_deep,no-commit-to-branch
+          # many of these are covered by better reviewdog linters below
+          SKIP: >-
+            terraform_tflint_deep,
+            no-commit-to-branch,
+            terraform_tflint_nocreds,
+            terraform_tfsec
       - uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ failure() }}
         with:

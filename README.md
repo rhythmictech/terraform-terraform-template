@@ -1,5 +1,12 @@
-# terraform-anycloud-template [![](https://github.com/rhythmictech/terraform-anycloud-template/workflows/pre-commit-check/badge.svg)](https://github.com/rhythmictech/terraform-anycloud-template/actions) <a href="https://twitter.com/intent/follow?screen_name=RhythmicTech"><img src="https://img.shields.io/twitter/follow/RhythmicTech?style=social&logo=RhythmicTech" alt="follow on Twitter"></a>
+# terraform-anycloud-template
 Template repository for terraform modules. Good for any cloud and any provider.
+
+[![tflint](https://github.com/rhythmictech/terraform-anycloud-template/workflows/tflint/badge.svg?branch=main&event=push)](https://github.com/rhythmictech/terraform-anycloud-template/actions?query=workflow%3Atflint+event%3Apush+branch%3Amain)
+[![tfsec](https://github.com/rhythmictech/terraform-anycloud-template/workflows/tfsec/badge.svg?branch=main&event=push)](https://github.com/rhythmictech/terraform-anycloud-template/actions?query=workflow%3Atfsec+event%3Apush+branch%3Amain)
+[![yamllint](https://github.com/rhythmictech/terraform-anycloud-template/workflows/yamllint/badge.svg?branch=main&event=push)](https://github.com/rhythmictech/terraform-anycloud-template/actions?query=workflow%3Ayamllint+event%3Apush+branch%3Amain)
+[![misspell](https://github.com/rhythmictech/terraform-anycloud-template/workflows/misspell/badge.svg?branch=main&event=push)](https://github.com/rhythmictech/terraform-anycloud-template/actions?query=workflow%3Amisspell+event%3Apush+branch%3Amain)
+[![pre-commit-check](https://github.com/rhythmictech/terraform-anycloud-template/workflows/pre-commit-check/badge.svg?branch=main&event=push)](https://github.com/rhythmictech/terraform-anycloud-template/actions?query=workflow%3Apre-commit-check+event%3Apush+branch%3Amain)
+<a href="https://twitter.com/intent/follow?screen_name=RhythmicTech"><img src="https://img.shields.io/twitter/follow/RhythmicTech?style=social&logo=RhythmicTech" alt="follow on Twitter"></a>
 
 ## Example
 Here's what using the module will look like
@@ -17,7 +24,7 @@ A bit about this module
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.0 |
+| terraform | >= 0.12.14 |
 
 ## Providers
 
