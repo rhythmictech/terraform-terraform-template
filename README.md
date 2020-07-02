@@ -45,8 +45,8 @@ No provider.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## The Giants underneath this module
-- pre-commit.com/
-- terraform.io/
-- github.com/tfutils/tfenv
-- github.com/segmentio/terraform-docs
+## The Giants Underneath this Module
+- [pre-commit.com](pre-commit.com)
+- [terraform.io](terraform.io)
+- [github.com/tfutils/tfenv](github.com/tfutils/tfenv)
+- [github.com/segmentio/terraform-docs](github.com/segmentio/terraform-docs)
