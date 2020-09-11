@@ -33,6 +33,7 @@ repos:
               cd $(dirname "$FILE")
               terraform init --backend=false
               terraform validate .
+              cd ..
             done
           '
         language: system

@@ -16,6 +16,10 @@ jobs:
         uses: actions/setup-python@v2
       - name: Install prerequisites
         run: ./bin/install-ubuntu.sh
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: ~> 0.12.29
       - name: initialize Terraform
         run: terraform init --backend=false
       - name: pre-commit
@@ -29,6 +33,7 @@ jobs:
             terraform_tflint_nocreds,
             terraform_tfsec
       - uses: stefanzweifel/git-auto-commit-action@v4
+        needs: pre-commit
         if: ${{ failure() }}
         with:
           commit_message: Apply automatic changes
