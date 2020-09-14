@@ -29,7 +29,6 @@ jobs:
             terraform_tflint_nocreds,
             terraform_tfsec
       - uses: stefanzweifel/git-auto-commit-action@v4
-        needs: pre-commit
         if: ${{ failure() }}
         with:
           commit_message: Apply automatic changes
