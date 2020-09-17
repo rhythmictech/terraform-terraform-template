@@ -15,7 +15,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: ~> 0.12.29
+          terraform_version: ~0.12.29
       - name: initialize Terraform
         run: terraform init --backend=false
       - name: pre-commit
@@ -44,7 +44,7 @@ jobs:
       - name: setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 0.12.26
+          terraform_version: ~0.12.29
       - name: Terraform init
         run: terraform init --backend=false
       - name: tflint
@@ -62,7 +62,7 @@ jobs:
       - name: setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 0.12.26
+          terraform_version: ~0.12.29
       - name: Terraform init
         run: terraform init --backend=false
       - name: tfsec
