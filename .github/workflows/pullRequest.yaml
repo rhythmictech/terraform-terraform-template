@@ -4,6 +4,7 @@ on:
   pull_request:
 
 jobs:
+  # TODO: #22 add job using https://github.com/reviewdog/action-alex
   pre-commit:
     runs-on: ubuntu-latest
     steps:
