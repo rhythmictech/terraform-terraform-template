@@ -24,7 +24,7 @@ A bit about this module
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.14 |
+| terraform | >= 0.13.5 |
 
 ## Providers
 
