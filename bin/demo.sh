@@ -38,12 +38,23 @@ pe "pre-commit run -a"
 
 # add a bug
 pe "echo 'BUG!!!' > main.tf "
+pe "cat main.tf"
+pe "git add main.tf"
 
 # it found the bug
 pe "git commit"
 
-# fix it interactively
+# fix it
+pe "git restore --staged main.tf"
+pe "git restore main.tf"
+pe "cat main.tf"
+
+# edit something to commit with vim
 cmd
+
+pe "git add ."
+
+pe "git commit"
 
 # show a prompt so as not to reveal our true nature after
 # the demo has concluded
