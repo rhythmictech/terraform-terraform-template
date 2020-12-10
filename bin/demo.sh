@@ -41,12 +41,14 @@ pe "echo 'BUG!!!' > main.tf "
 pe "cat main.tf"
 pe "git add main.tf"
 
+# terraform knows about the bug
+pe "terraform init"
+
 # it found the bug
 pe "git commit"
 
 # fix it
-pe "git restore --staged main.tf"
-pe "git restore main.tf"
+pe "git restore --staged main.tf && git restore main.tf"
 pe "cat main.tf"
 
 # edit something to commit with vim
