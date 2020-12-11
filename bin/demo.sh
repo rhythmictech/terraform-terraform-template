@@ -38,7 +38,6 @@ pe "pre-commit run -a"
 
 # add a bug
 pe "echo 'BUG!!!' > main.tf "
-pe "cat main.tf"
 pe "git add main.tf"
 
 # terraform knows about the bug
@@ -48,13 +47,12 @@ pe "terraform init"
 pe "git commit"
 
 # fix it
-pe "git restore --staged main.tf && git restore main.tf"
-pe "cat main.tf"
+pe "git restore --hard HEAD"
 
 # edit something to commit with vim
-cmd
+pe "code README.md"
 
-pe "git add ."
+pe "git add README.md"
 
 pe "git commit"
 
