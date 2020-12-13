@@ -12,12 +12,13 @@ Template repository for terraform modules. Good for any cloud and any provider.
 Here's what using the module will look like
 ```hcl
 module "example" {
-  source = "rhythmictech/terraform-mycloud-mymodule
+  source  = "rhythmictech/terraform-terraform-template"
+  version = "v2.0.2"
 }
 ```
 
 ## About
-A bit about this module
+This is a template. You shouldn't be pulling it as a module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -37,8 +38,9 @@ A bit about this module
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| foobar | this is a multiline description<br>some call it a 'heredoc string'<br>they start with `<<` | `list(string)` | <pre>[<br>  "foo",<br>  "bar"<br>]</pre> | no |
+| name | Moniker to apply to all resources in the module | `string` | `"Jimbo"` | no |
+| tags | User-defined key-value pairs | `map(string)` | `{}` | no |
 
 ## Outputs
 
