@@ -12,11 +12,14 @@ repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.31.0
     hooks:
+    # Add and sorts our docs
       - id: terraform_docs
         always_run: true
         args:
           - --args=--sort-by-required
+      # apply terraform fmt
       - id: terraform_fmt
+      # lint for best-practices
       - id: terraform_tflint
         alias: terraform_tflint_deep
         name: terraform_tflint_deep
@@ -25,6 +28,7 @@ repos:
       - id: terraform_tflint
         alias: terraform_tflint_nocreds
         name: terraform_tflint_nocreds
+      # terraform security check
       - id: terraform_tfsec
 
   ##########################################
