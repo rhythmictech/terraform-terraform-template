@@ -8,6 +8,17 @@ module "tags" {
   tags         = var.tags
 }
 
+module "laughs" {
+  source  = "sblack4/laughs/terraform"
+  version = "0.0.2"
+}
+
+resource "null_resource" "hello_world" {
+  provisioner "local-exec" {
+    command = "echo 'hello world'"
+  }
+}
+
 locals {
   # tflint-ignore: terraform_unused_declarations
   name = module.tags.name

@@ -25,10 +25,13 @@ A bit about this module
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.5 |
+| null | 3.0.0 |
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| null | 3.0.0 |
 
 ## Inputs
 
