@@ -3,6 +3,7 @@
 
 ##########################################
 # use the magic
+# https://github.com/paxtonhare/demo-magic/tree/10abf5390b6d5461155dc58012081490598f7bad
 ##########################################
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/demo-magic.sh
@@ -25,10 +26,17 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}\W "
 clear
 
 ##########################################
-# Demo
+# Demo:
+# 1. look at the (commented) files containing the configuration information
+# 2. start the demo by running the pre-commit hooks
+# 3. make a change
+# 4. try and fail to commit
+# 5. restore
+# 6. watch hook write docs
 ##########################################
 
 # use filebrowser
+# to investigate what's in the pre-commit config
 # pe "code .pre-commit-config.yaml"
 # pe "code .tflint.hcl"
 # pe "code .yamllint.yml"
