@@ -1,4 +1,14 @@
+##########################################
+# A pre-commit file is just a list of repos
+# with options in yaml
+##########################################
 repos:
+
+  ##########################################
+  # Anton Babenko is the guy behing the Terraform AWS modules
+  # this repo object pulls pre-commit hooks that he maintains
+  # and select five hooks to run
+  ##########################################
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.31.0
     hooks:
@@ -16,6 +26,11 @@ repos:
         alias: terraform_tflint_nocreds
         name: terraform_tflint_nocreds
       - id: terraform_tfsec
+
+  ##########################################
+  # local repo runs a hook called terraform_validate
+  # and runs the bash inline
+  ##########################################
   - repo: local
     hooks:
       - id: terraform_validate
@@ -40,6 +55,12 @@ repos:
         verbose: true
         files: \.tf(vars)?$
         exclude: examples
+
+  ##########################################
+  # hooks maintained by the pre-commit
+  # out-of-the-box hooks check generic things
+  # like proper json or yaml syntax and file attributes
+  ##########################################
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.0.0
     hooks:
