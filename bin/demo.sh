@@ -55,7 +55,7 @@ pe "terraform init"
 pe "git commit"
 
 # fix it
-pe "git restore --hard HEAD"
+pe "git reset main.tf && git restore main.tf"
 
 # edit something to commit with vim
 pe "code README.md"
