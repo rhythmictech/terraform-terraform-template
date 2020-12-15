@@ -58,9 +58,9 @@ pe "git commit"
 pe "git reset main.tf && git restore main.tf"
 
 # edit something to commit with vim
-pe "code README.md"
+pe "code main.tf"
 
-pe "git add README.md"
+pe "git add main.tf README.md"
 
 pe "git commit"
 
