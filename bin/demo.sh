@@ -58,10 +58,9 @@ pe "git add main.tf"
 pe "git commit"
 
 # fix it
-pe "git reset main.tf && git restore main.tf"
+pe "git reset . && git restore ."
 
-# edit something to commit with vim
-# an output would be good
+# uncomment the final output
 pe "code main.tf"
 
 # add and commit
@@ -69,7 +68,7 @@ pe "git add main.tf"
 pe "git commit"
 
 # it fixed the readme!
-pe "code README.md"
+# pe "code README.md"
 
 # now add and commit
 pe "git add main.tf README.md"
