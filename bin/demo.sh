@@ -44,12 +44,13 @@ clear
 # we can run them and see no bugs
 pe "pre-commit run -a"
 
-# add a bug
+# create a bug
 pe "echo 'BUG!!!' > main.tf "
-pe "git add main.tf"
-
 # terraform knows about the bug
 pe "terraform init"
+# add a bug
+pe "git add main.tf"
+
 
 # it found the bug
 pe "git commit"
