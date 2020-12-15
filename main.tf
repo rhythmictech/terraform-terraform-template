@@ -48,3 +48,8 @@ locals {
   # tflint-ignore: terraform_unused_declarations
   tags = module.tags.tags_no_name
 }
+
+# output "hello_world" {
+#   description = "What's a programs first output"
+#   value       = "hello world"
+# }
