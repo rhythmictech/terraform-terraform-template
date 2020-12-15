@@ -21,7 +21,33 @@ module "example" {
 This is a template. You shouldn't be pulling it as a module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-Error: Argument or block definition required: An argument or block definition is required here. To set an argument, use the equals sign "=" to introduce the argument value.
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13.5 |
+| null | 3.0.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| null | 3.0.0 |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| foobar | this is a multiline description<br>some call it a 'heredoc string'<br>they start with `<<` | `list(string)` | <pre>[<br>  "foo",<br>  "bar"<br>]</pre> | no |
+| name | Moniker to apply to all resources in the module | `string` | `"Jimbo"` | no |
+| tags | User-defined key-value pairs | `map(string)` | `{}` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| tags\_module | Tags Module in it's entirety |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Getting Started
