@@ -9,4 +9,5 @@
 *.tfvars
 
 .DS_Store
+~*
 tmp

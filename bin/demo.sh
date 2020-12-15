@@ -45,24 +45,34 @@ clear
 pe "pre-commit run -a"
 
 # create a bug
-pe "echo 'BUG!!!' > main.tf "
+pe "code main.tf"
+# pe "echo 'BUG!!!' > main.tf "
+
 # terraform knows about the bug
 pe "terraform init"
+
 # add a bug
 pe "git add main.tf"
 
-
-# it found the bug
+# try to commit but it found the bug
 pe "git commit"
 
 # fix it
 pe "git reset main.tf && git restore main.tf"
 
 # edit something to commit with vim
+# an output would be good
 pe "code main.tf"
 
-pe "git add main.tf README.md"
+# add and commit
+pe "git add main.tf"
+pe "git commit"
 
+# it fixed the readme!
+pe "code README.md"
+
+# now add and commit
+pe "git add main.tf README.md"
 pe "git commit"
 
 # show a prompt so as not to reveal our true nature after
