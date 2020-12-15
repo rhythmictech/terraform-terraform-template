@@ -12,30 +12,35 @@ Template repository for terraform modules. Good for any cloud and any provider.
 Here's what using the module will look like
 ```hcl
 module "example" {
-  source = "rhythmictech/terraform-mycloud-mymodule
+  source  = "rhythmictech/terraform-terraform-template"
+  version = "v2.0.2"
 }
 ```
 
 ## About
-A bit about this module
+This is a template. You shouldn't be pulling it as a module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.14 |
+| terraform | >= 0.13.5 |
+| null | 3.0.0 |
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| null | 3.0.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| foobar | this is a multiline description<br>some call it a 'heredoc string'<br>they start with `<<` | `list(string)` | <pre>[<br>  "foo",<br>  "bar"<br>]</pre> | no |
+| name | Moniker to apply to all resources in the module | `string` | `"Jimbo"` | no |
+| tags | User-defined key-value pairs | `map(string)` | `{}` | no |
 
 ## Outputs
 
@@ -45,8 +50,16 @@ No provider.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## The Giants Underneath this Module
-- [pre-commit.com](pre-commit.com)
-- [terraform.io](terraform.io)
-- [github.com/tfutils/tfenv](github.com/tfutils/tfenv)
-- [github.com/segmentio/terraform-docs](github.com/segmentio/terraform-docs)
+## Getting Started
+This workflow has a few prerequisites which are installed through the `./bin/install-x.sh` scripts and are linked below. The install script will also work on your local machine. 
+
+- [pre-commit](https://pre-commit.com)
+- [terraform](https://terraform.io)
+- [tfenv](https://github.com/tfutils/tfenv)
+- [terraform-docs](https://github.com/segmentio/terraform-docs)
+- [tfsec](https://github.com/tfsec/tfsec)
+- [tflint](https://github.com/terraform-linters/tflint)
+
+We use `tfenv` to manage `terraform` versions, so the version is defined in the `versions.tf` and `tfenv` installs the latest compliant version.
+`pre-commit` is like a package manager for scripts that integrate with git hooks. We use them to run the rest of the tools before apply. 
+`terraform-docs` creates the beautiful docs (above),  `tfsec` scans for security no-nos, `tflint` scans for best practices. 
