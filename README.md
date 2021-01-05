@@ -24,7 +24,7 @@ A bit about this module
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.14 |
+| terraform | >= 0.13.5 |
 
 ## Providers
 
@@ -45,8 +45,16 @@ No provider.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## The Giants Underneath this Module
-- [pre-commit.com](pre-commit.com)
-- [terraform.io](terraform.io)
-- [github.com/tfutils/tfenv](github.com/tfutils/tfenv)
-- [github.com/segmentio/terraform-docs](github.com/segmentio/terraform-docs)
+## Getting Started
+This workflow has a few prerequisites which are installed through the `./bin/install-x.sh` scripts and are linked below. The install script will also work on your local machine. 
+
+- [pre-commit](https://pre-commit.com)
+- [terraform](https://terraform.io)
+- [tfenv](https://github.com/tfutils/tfenv)
+- [terraform-docs](https://github.com/segmentio/terraform-docs)
+- [tfsec](https://github.com/tfsec/tfsec)
+- [tflint](https://github.com/terraform-linters/tflint)
+
+We use `tfenv` to manage `terraform` versions, so the version is defined in the `versions.tf` and `tfenv` installs the latest compliant version.
+`pre-commit` is like a package manager for scripts that integrate with git hooks. We use them to run the rest of the tools before apply. 
+`terraform-docs` creates the beautiful docs (above),  `tfsec` scans for security no-nos, `tflint` scans for best practices. 
