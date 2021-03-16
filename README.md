@@ -45,6 +45,7 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | name | Moniker to apply to all resources in the module | `string` | n/a | yes |
+| password | n/a | `any` | n/a | yes |
 | tags | User-Defined tags | `map(string)` | `{}` | no |
 
 ## Outputs
