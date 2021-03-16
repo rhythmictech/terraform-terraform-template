@@ -13,3 +13,6 @@
 
 # temp folders
 tmp
+
+# ms office files
+~*
