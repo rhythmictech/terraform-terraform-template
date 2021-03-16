@@ -21,4 +21,4 @@ jobs:
           reporter: github-check
           filter_mode: nofilter
           level: error
-          exclude: "bin/demo-magic.sh"
+          exclude: "demo-magic.sh"
