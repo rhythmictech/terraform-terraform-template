@@ -30,6 +30,16 @@ A bit about this module
 
 No provider.
 
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| tags | rhythmictech/tags/terraform | ~> 1.1.0 |
+
+## Resources
+
+No resources.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -42,7 +52,6 @@ No provider.
 | Name | Description |
 |------|-------------|
 | tags\_module | Tags Module in it's entirety |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Getting Started
