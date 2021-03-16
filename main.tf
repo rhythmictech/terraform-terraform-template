@@ -8,6 +8,8 @@ module "tags" {
   tags         = var.tags
 }
 
+variable "password" {}
+
 locals {
   # tflint-ignore: terraform_unused_declarations
   name = module.tags.name
