@@ -8,11 +8,6 @@ repos:
           - --args=--sort-by-required
       - id: terraform_fmt
       - id: terraform_tflint
-        alias: terraform_tflint_deep
-        name: terraform_tflint_deep
-        args:
-          - --args=--deep
-      - id: terraform_tflint
         alias: terraform_tflint_nocreds
         name: terraform_tflint_nocreds
       - id: terraform_tfsec
