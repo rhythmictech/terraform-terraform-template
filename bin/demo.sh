@@ -45,7 +45,7 @@ clear
 pe "pre-commit run -a"
 
 # create a bug
-pe "code main.tf"
+pe "code main.tf && echo 'watch me add a nasty bug'"
 # pe "echo 'BUG!!!' > main.tf "
 
 # terraform knows about the bug
