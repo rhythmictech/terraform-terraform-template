@@ -24,17 +24,17 @@ A bit about this module
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.5 |
 
 ## Providers
 
-No provider.
+No providers.
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| tags | rhythmictech/tags/terraform | ~> 1.1.0 |
+| <a name="module_tags"></a> [tags](#module\_tags) | rhythmictech/tags/terraform | ~> 1.1.0 |
 
 ## Resources
 
@@ -44,14 +44,14 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| <a name="input_name"></a> [name](#input\_name) | Moniker to apply to all resources in the module | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | User-Defined tags | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| tags\_module | Tags Module in it's entirety |
+| <a name="output_tags_module"></a> [tags\_module](#output\_tags\_module) | Tags Module in it's entirety |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Getting Started
