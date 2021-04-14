@@ -14,5 +14,4 @@ git config --global init.templateDir ~/.git-template
 pre-commit init-templatedir ~/.git-template
 
 echo 'installing terraform with tfenv'
-tfenv install latest:^0.13
-tfenv use latest:^0.13
+tfenv install
