@@ -16,10 +16,6 @@ jobs:
         uses: actions/setup-python@v2
       - name: Install prerequisites
         run: ./bin/install-ubuntu.sh
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: ~0.13.5
       - name: initialize Terraform
         run: terraform init --backend=false
       - name: pre-commit

@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: ~0.13.5
+      - name: Install prerequisites
+        run: ./bin/install-ubuntu.sh
       - name: Terraform init
         run: terraform init --backend=false
       - name: tflint
