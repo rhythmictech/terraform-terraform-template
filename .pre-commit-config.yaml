@@ -1,7 +1,7 @@
 exclude: ".terraform"
 repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.48.0
+    rev: v1.50.0
     hooks:
       - id: terraform_docs
         always_run: true
@@ -29,6 +29,27 @@ repos:
               cd $(dirname "$FILE")
               terraform init --backend=false
               terraform validate .
+              cd ..
+            done
+          '
+        language: system
+        verbose: true
+        files: \.tf(vars)?$
+        exclude: examples
+      - id: tflock
+        name: provider_locks
+        entry: |
+          bash -c '
+            AWS_DEFAULT_REGION=us-east-1
+            declare -a DIRS
+            for FILE in "$@"
+            do
+              DIRS+=($(dirname "$FILE"))
+            done
+            for DIR in $(printf "%s\n" "${DIRS[@]}" | sort -u)
+            do
+              cd $(dirname "$FILE")
+              terraform providers lock -platform=windows_amd64 -platform=darwin_amd64 -platform=linux_amd64
               cd ..
             done
           '
