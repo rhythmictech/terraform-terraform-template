@@ -5,8 +5,6 @@ repos:
     hooks:
       - id: terraform_docs
         always_run: true
-        args:
-          - --args=--sort-by-required
       - id: terraform_fmt
       - id: terraform_tflint
         alias: terraform_tflint_nocreds
@@ -87,3 +85,5 @@ repos:
         args:
           - --markdown-linebreak-ext=md
         exclude: README.md
+ci:
+  skip: [terraform_docs, terraform_fmt, terraform_tflint, terraform_tfsec, tflock]
