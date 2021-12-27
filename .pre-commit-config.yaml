@@ -1,7 +1,7 @@
 exclude: ".terraform"
 repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.62.1
+    rev: v1.62.3
     hooks:
       - id: terraform_docs
         always_run: true
@@ -56,7 +56,7 @@ repos:
         files: \.tf(vars)?$
         exclude: examples
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: check-case-conflict
       - id: check-json
