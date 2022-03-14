@@ -13,3 +13,5 @@
 
 # temp folders
 tmp
+
+.terraform.lock.hcl
