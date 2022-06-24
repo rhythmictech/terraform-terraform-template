@@ -15,7 +15,7 @@ cd ..
 rm -rf tmp
 
 curl -L "$(curl -sL https://api.github.com/repos/terraform-linters/tflint/releases/latest | grep -o -E "https://.+?_linux_amd64.zip")" > tflint.zip && unzip tflint.zip && rm tflint.zip && sudo mv tflint /usr/bin/
-env GO111MODULE=on go get -u github.com/liamg/tfsec/cmd/tfsec
+go install github.com/aquasecurity/tfsec/cmd/tfsec@latest
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv || true
 mkdir -p ~/.local/bin/
 . ~/.profile
