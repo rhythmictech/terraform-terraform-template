@@ -24,7 +24,7 @@ jobs:
             terraform_tflint_deep,
             no-commit-to-branch,
             terraform_tflint_nocreds,
-            terraform_tfsec
+            terraform_trivy
   tflint:
     runs-on: ubuntu-latest
     steps:
