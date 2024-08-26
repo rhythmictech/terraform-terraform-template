@@ -7,7 +7,7 @@ pip3 install pre-commit
 # terraform docs
 mkdir tmp
 cd tmp
-curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-$(uname)-amd64.tar.gz
+curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.18.0/terraform-docs-v0.18.0-$(uname)-amd64.tar.gz
 tar -xzf terraform-docs.tar.gz
 chmod +x terraform-docs
 sudo mv terraform-docs /usr/bin/
