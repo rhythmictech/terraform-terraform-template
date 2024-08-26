@@ -51,4 +51,4 @@ repos:
           - --markdown-linebreak-ext=md
         exclude: README.md
 ci:
-  skip: [terraform_docs, terraform_fmt, terraform_tflint, terraform_trivy, tflock]
+  skip: [terraform_docs, terraform_fmt, terraform_tflint, terraform_trivy, terraform_providers_lock]
