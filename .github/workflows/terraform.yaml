@@ -1,5 +1,5 @@
 ---
-name: tflint
+name: Terraform Composite Action
 on:
   push:
 
