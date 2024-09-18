@@ -1,0 +1,17 @@
+---
+name: Terraform Composite Action
+on:
+  push:
+
+jobs:
+  terraform-composite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install prerequisites
+        run: ./bin/install-ubuntu.sh
+      - name: Terraform init
+        run: terraform init --backend=false
+      - name: actions-terraform-composite
+        uses: rhythmictech/actions-terraform-composite@master
+            
