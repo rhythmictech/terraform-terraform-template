@@ -3,6 +3,7 @@ name: pre-commit-check
 on:
   push:
     branches:
+      - main
       - master
       - prod
       - develop

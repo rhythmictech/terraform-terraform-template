@@ -1,63 +1,27 @@
 exclude: ".terraform"
 repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.92.1
+    rev: v1.92.2
     hooks:
       - id: terraform_docs
         always_run: true
       - id: terraform_fmt
+      - id: terraform_validate
+        args:
+        - --hook-config=--retry-once-with-cleanup=true
+        exclude: ^examples
       - id: terraform_tflint
         alias: terraform_tflint_nocreds
+        exclude: ^examples
         name: terraform_tflint_nocreds
-      - id: terraform_tfsec
-  - repo: local
-    hooks:
-      - id: terraform_validate
-        name: terraform_validate
-        entry: |
-          bash -c '
-            AWS_DEFAULT_REGION=us-east-1
-            declare -a DIRS
-            for FILE in "$@"
-            do
-              DIRS+=($(dirname "$FILE"))
-            done
-            for DIR in $(printf "%s\n" "${DIRS[@]}" | sort -u)
-            do
-              cd $(dirname "$FILE")
-              terraform init --backend=false
-              terraform validate .
-              cd ..
-            done
-          '
-        language: system
-        verbose: true
-        files: \.tf(vars)?$
-        exclude: examples
-      - id: tflock
-        name: provider_locks
-        entry: |
-          bash -c '
-            AWS_DEFAULT_REGION=us-east-1
-            declare -a DIRS
-            for FILE in "$@"
-            do
-              DIRS+=($(dirname "$FILE"))
-            done
-            for DIR in $(printf "%s\n" "${DIRS[@]}" | sort -u)
-            do
-              cd $(dirname "$FILE")
-              terraform providers lock -platform=windows_amd64 -platform=darwin_amd64 -platform=linux_amd64
-              cd ..
-            done
-          '
-        language: system
-        verbose: true
-        files: \.tf(vars)?$
-        exclude: examples
+      - id: terraform_trivy
+        args:
+        - --args=--skip-dirs="**/.terraform,examples/*"
+      - id: terraform_providers_lock
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
+      - id: check-added-large-files
       - id: check-case-conflict
       - id: check-json
       - id: check-merge-conflict
@@ -65,6 +29,7 @@ repos:
       - id: check-yaml
         args:
           - --unsafe
+      - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args:
@@ -86,4 +51,4 @@ repos:
           - --markdown-linebreak-ext=md
         exclude: README.md
 ci:
-  skip: [terraform_docs, terraform_fmt, terraform_tflint, terraform_tfsec, tflock]
+  skip: [terraform_docs, terraform_fmt, terraform_validate, terraform_tflint, terraform_trivy, terraform_providers_lock]
