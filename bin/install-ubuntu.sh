@@ -34,4 +34,3 @@ tfenv install
 
 wget https://github.com/aquasecurity/trivy/releases/download/v0.68.2/trivy_0.68.2_Linux-64bit.deb
 sudo dpkg -i trivy_0.68.2_Linux-64bit.deb
-
