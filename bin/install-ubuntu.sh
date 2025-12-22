@@ -7,7 +7,7 @@ pip3 install pre-commit
 # terraform docs
 mkdir tmp
 cd tmp
-curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.18.0/terraform-docs-v0.18.0-$(uname)-amd64.tar.gz
+curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.21.0/terraform-docs-v0.21.0-$(uname)-amd64.tar.gz
 tar -xzf terraform-docs.tar.gz
 chmod +x terraform-docs
 sudo mv terraform-docs /usr/bin/
@@ -31,5 +31,5 @@ pre-commit init-templatedir ~/.git-template
 echo 'installing terraform with tfenv'
 tfenv install
 
-wget https://github.com/aquasecurity/trivy/releases/download/v0.54.1/trivy_0.54.1_Linux-64bit.deb
-sudo dpkg -i trivy_0.54.1_Linux-64bit.deb
+wget https://github.com/aquasecurity/trivy/releases/download/v0.68.2/trivy_0.68.2_Linux-64bit.deb
+sudo dpkg -i trivy_0.68.2_Linux-64bit.deb
