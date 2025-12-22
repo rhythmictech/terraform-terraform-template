@@ -59,7 +59,7 @@ This workflow has a few prerequisites which are installed through the `./bin/ins
 - [terraform](https://terraform.io)
 - [tfenv](https://github.com/tfutils/tfenv)
 - [terraform-docs](https://github.com/segmentio/terraform-docs)
-- [tfsec](https://github.com/tfsec/tfsec)
+- [trivy]([https://github.com/tfsec/tfsec](https://github.com/aquasecurity/trivy))
 - [tflint](https://github.com/terraform-linters/tflint)
 
 We use `tfenv` to manage `terraform` versions, so the version is defined in the `versions.tf` and `tfenv` installs the latest compliant version.
